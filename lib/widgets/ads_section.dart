@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../pages/course_overview_page.dart';
 
 class AdsSection extends StatelessWidget {
   const AdsSection({super.key});
@@ -74,7 +75,7 @@ class AdsSection extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  left: 261, // 249 + 12
+                  left: 276, // 249 + 12
                   top: 0,
                   child: Container(
                     width: 249,
@@ -87,7 +88,7 @@ class AdsSection extends StatelessWidget {
                     child: Stack(
                       children: [
                         Positioned(
-                          left: 18.68,
+                          left: 20,
                           top: 25.75,
                           child: SvgPicture.asset(
                             'assets/images/ad-2.svg',
@@ -100,28 +101,41 @@ class AdsSection extends StatelessWidget {
                   ),
                 ),
 
+
                 Positioned(
                   left: 18.15,
                   top: 104.5,
-                  child: Container(
-                    width: 85,
-                    height: 31,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFF6905),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: Text(
-                      'Get Started',
-                      style: GoogleFonts.poppins(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
-                        height: 1,
+                  child: GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const CourseOverviewPage(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 85,
+                      height: 31,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFFF6905),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: Text(
+                        'Get Started',
+                        style: GoogleFonts.poppins(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                          height: 1,
+                        ),
                       ),
                     ),
                   ),
                 ),
+
               ],
             ),
           ),

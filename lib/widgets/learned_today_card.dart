@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../pages/course_overview_page.dart';
 
 class LearnedTodayCard extends StatelessWidget {
   const LearnedTodayCard({super.key});
@@ -34,14 +35,24 @@ class LearnedTodayCard extends StatelessWidget {
     height: 1,
     ),
     ),
-    Text(
-    'My courses',
-    style: GoogleFonts.poppins(
-    fontSize: 12,
-    color: const Color(0xFF3D5CFF),
-    height: 1,
-    ),
-    ),
+      GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const CourseOverviewPage(),
+            ),
+          );
+        },
+        child: Text(
+          'My courses',
+          style: GoogleFonts.poppins(
+            fontSize: 12,
+            color: const Color(0xFF3D5CFF),
+            height: 1,
+          ),
+        ),
+      ),
     ],
     ),
     const SizedBox(height: 8),
